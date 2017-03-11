@@ -1,0 +1,170 @@
+{% extends 'FrontBundle::base.html.twig' %}
+{% block body %}
+    <div class="container-about">
+        <div class="container">
+            <div class="page-header" id="about">
+                <h1 class="text-center text-info">余っている土地を発掘する<br/><span class="fa fa-user"></span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-justify">
+                    地方で余っている土地を発掘するサイトです<br>
+                    「やりたいことがある！」「でもやり方は分からないし、一緒にやる人も必要…」<br>
+                    <br>
+
+                </div>
+                <div class="col-md-6 text-justify">
+                    新規に開設する農園情報を希望される方は、ぜひ、農園情報希望フォームよりご登録ください！優先的にご案内いたします。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix hidden-xs" style="width:100%; height:60px;"></div>
+
+    <div class="container-projects">
+        <div class="clearfix hidden-xs" style="width:100%; height:10px;"></div>
+        <div class="container">
+            <div class="page-header" id="projects">
+                <h1 class="text-center text-danger">List<br/><span class="fa fa-paint-brush"></span></h1>
+            </div>
+
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="{{ asset(post.imagePath) }}" class="img-responsive"/>
+                                <h3><a href="{{ path('blog_show', {'id':post.id}) }}">{{ post.title }}</a></h3>
+                                {#<p>{{ post.currentMember }}/{{ post.limitMember }}人</p>#}
+                                {#<div class="progress">#}
+                                    {#<div class="progress-bar progress-bar-danger progress-bar-striped active"#}
+                                         {#role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"#}
+                                         {#style="width: {{ post.currentMember/ post.limitMember*100 }}%">#}
+                                        {#<span class="sr-only">30% Complete (danger)</span>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <hr>
+                                <p>{{ post.prefArea }}</p>
+                                {#<p>{{ post.createdAt|date('Y/m/d H:i') }}</p>#}
+                                <ul class="list-unstyled ">
+                                {% for tag in post.tags %}
+                                        <li class="btn btn-default">{{ tag.tagName }}</li>
+                                {% endfor %}
+                                </ul>
+
+                                {#<span class="btn btn-success"><a href="{{ path('blog_delete', {'id':post.id}) }}">Delete</span></a>#}
+                                {#<span class="btn btn-success"><a href="{{ path('blog_edit', {'id':post.id}) }}">Edit</a></span>#}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <tr>
+                        <td colspan="4">No posts found</td>
+                    </tr>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="clearfix hidden-xs" style="width:100%; height:50px;"></div>
+    </div>
+
+    <div class="container-gallery">
+        <div class="container">
+            <div class="page-header" id="gallery">
+                <h1 class="text-center text-success">CATRGORY<br/><span class="fa fa-camera"></span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="list-unstyled text-center">
+                        <li class="filter btn btn-success" data-filter=".graphic">新着</li>
+                        <li class="filter btn btn-success" data-filter=".print">人気</li>
+                        <li class="filter btn btn-success" data-filter=".webdesign">お気に入り</li>
+                    </ul>
+                </div>
+                {% for post in posts %}
+                    {% if post.category.categoryId == 1 %}
+                    <div class="mix graphic col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                {#<?php if() ?>#}
+
+                                <img src="{{ asset(post.imagePath) }}" class="img-responsive"/>
+                                <h3><a href="{{ path('blog_show', {'id':post.id}) }}">{{ post.title }}</a></h3>
+                                {#<p>{{ post.currentMember }}/{{ post.limitMember }}人</p>#}
+                                {#<div class="progress">#}
+                                    {#<div class="progress-bar progress-bar-danger progress-bar-striped active"#}
+                                         {#role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"#}
+                                         {#style="width: {{ post.currentMember/ post.limitMember*100 }}%">#}
+                                        {#<span class="sr-only">30% Complete (danger)</span>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <hr>
+                                <p>{{ post.prefArea }}</p>
+                                {#<p>{{ post.createdAt|date('Y/m/d H:i') }}</p>#}
+                                <ul class="list-unstyled ">
+                                    {% for tag in post.tags %}
+                                        <li class="btn btn-default">{{ tag.tagName }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if post.category.categoryId == 2 %}
+                    <div class="mix print col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="{{ asset(post.imagePath) }}" class="img-responsive"/>
+                                <h3><a href="{{ path('blog_show', {'id':post.id}) }}">{{ post.title }}</a></h3>
+                                {#<p>{{ post.currentMember }}/{{ post.limitMember }}人</p>#}
+                                {#<div class="progress">#}
+                                    {#<div class="progress-bar progress-bar-danger progress-bar-striped active"#}
+                                         {#role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"#}
+                                         {#style="width: {{ post.currentMember/ post.limitMember*100 }}%">#}
+                                        {#<span class="sr-only">30% Complete (danger)</span>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <hr>
+                                <p>{{ post.prefArea }}</p>
+                                {#<p>{{ post.createdAt|date('Y/m/d H:i') }}</p>#}
+                                <ul class="list-unstyled ">
+                                    {% for tag in post.tags %}
+                                        <li class="btn btn-default">{{ tag.tagName }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if post.category.categoryId == 3 %}
+                    <div class="mix webdesign col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="{{ asset(post.imagePath) }}" class="img-responsive"/>
+                                <h3><a href="{{ path('blog_show', {'id':post.id}) }}">{{ post.title }}</a></h3>
+                                {#<p>{{ post.currentMember }}/{{ post.limitMember }}人</p>#}
+                                {#<div class="progress">#}
+                                    {#<div class="progress-bar progress-bar-danger progress-bar-striped active"#}
+                                         {#role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"#}
+                                         {#style="width: {{ post.currentMember/ post.limitMember*100 }}%">#}
+                                        {#<span class="sr-only">30% Complete (danger)</span>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <hr>
+                                <p>{{ post.prefArea }}</p>
+                                <ul class="list-unstyled ">
+                                    {% for tag in post.tags %}
+                                        <li class="btn btn-default">{{ tag.tagName }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clearfix hidden-xs" style="width:100%; height:50px;"></div>
+    </div>
+{% endblock %}

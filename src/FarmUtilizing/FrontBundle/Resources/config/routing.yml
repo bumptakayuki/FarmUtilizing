@@ -1,0 +1,27 @@
+blog_index:
+    pattern:  /
+    defaults: { _controller: FrontBundle:Default:index }
+
+blog_new:
+    pattern:  /new
+    defaults: { _controller: FrontBundle:Default:new }
+
+blog_show:
+    pattern:  /{id}/show
+    defaults: { _controller: FrontBundle:Default:show }
+
+blog_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: FrontBundle:Default:delete }
+
+blog_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: FrontBundle:Default:edit }
+
+blog_search:
+    pattern:  /search
+    defaults: { _controller: FrontBundle:Default:search }
+
+blog_company:
+    pattern:  /company
+    defaults: { _controller: FrontBundle:Default:company }

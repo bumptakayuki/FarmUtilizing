@@ -1,0 +1,51 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block body %}
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    タイトル
+                </th>
+                <th>
+                    場所
+                </th>
+                <th>
+                    カテゴリ
+                </th>
+                <th>
+                    削除
+                </th>
+                <th>
+                    編集
+                </th>
+            </tr>
+            {% for post in posts %}
+                <tr>
+                    <td><h4><a href="{{ path('blog_show', {'id':post.id}) }}">{{ post.title }}</a></h4></td>
+                    <td>{{ post.prefArea }}</td>
+                    <td>
+                        {% for tag in post.tags %}
+                            {{ tag.tagName }},
+                        {% endfor %}
+                    </td>
+                    <td><span class="btn btn-success">
+                            <a href="{{ path('admin_post_delete', {'id':post.id}) }}">Delete
+                            </a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="btn btn-success">
+                            <a href="{{ path('admin_post_edit', {'id':post.id}) }}">Edit
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+
+            {% else %}
+                <tr>
+                    <td colspan="4">No posts found</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+admin_post_index:
+    path:     /post
+    defaults: { _controller: AdminBundle:Post:index }
+
+admin_post_new:
+    pattern:  /post/new
+    defaults: { _controller: AdminBundle:Post:new }
+
+admin_post_edit:
+    pattern:  /post/{id}/edit
+    defaults: { _controller: AdminBundle:Post:edit }
+
+admin_post_view:
+    pattern:  /post/{id}/view
+    defaults: { _controller: AdminBundle:Post:view }
+
+admin_post_delete:
+    pattern:  /post/{id}/delete
+    defaults: { _controller: AdminBundle:Post:delete }
+
+admin_post_csv_export:
+    pattern:  /post/csvExport
+    defaults: { _controller: AdminBundle:Post:csvExport }
+
+admin_post_upload:
+    pattern:  /post/upload
+    defaults: { _controller: AdminBundle:Post:upload }

@@ -1,0 +1,35 @@
+{% extends 'AdminBundle::base.html.twig' %}
+{% block body %}
+        <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <h1>プロジェクト作成</h1>
+            <form action="{{ path('admin_post_new') }}" method="post" {{ form_enctype(form) }} novalidate>
+                {{ form_start(form) }}
+                {{ form_errors(form.title) }}
+                {{ form_errors(form.body) }}
+                {{ form_errors(form) }}
+
+                {{ form_row(form.title, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.body, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.money, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.image_path, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.image_path2, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.image_path3, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.area_map, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(form.pref_area, { 'attr': {'class': 'prefArea-select2 form-control'} }) }}
+
+                {{ form_row(form.tags, { 'attr': {'class': 'tag-select2 form-control'} }) }}
+                {{ form_row(form.category, { 'attr': {'class': 'tag-select2 form-control'} }) }}
+
+                {#{{ form.tags) }}#}
+                {{ form_rest(form) }}
+                <br>
+                <input type="submit" value="投稿" class="btn btn-default btn-primary"/>
+            </form>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+{% endblock %}

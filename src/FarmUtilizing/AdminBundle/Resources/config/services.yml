@@ -1,0 +1,7 @@
+parameters:
+#    dream_market_admin_admin.example.class: DreamMarket\AdminAdminBundle\Example
+
+services:
+#    dream_market_admin_admin.example:
+#        class: %dream_market_admin_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

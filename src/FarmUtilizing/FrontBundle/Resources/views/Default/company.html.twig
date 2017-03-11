@@ -1,0 +1,114 @@
+{% extends 'FrontBundle::base.html.twig' %}
+{% block body %}
+    <div class="container-about">
+        <div class="container">
+            <div class="page-header" id="about">
+                <h1 class="text-center text-info">ABOUT<br/><span class="fa fa-user"></span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-justify">
+                    本気で実現したい企画アイデアと本気で実現したい仲間が集まるサービスです。<br>
+                    「やりたいことがある！」「でもやり方は分からないし、一緒にやる人も必要…」<br>
+                    <br>
+                    とっても素敵なアイデアがあるのに、スキルや経験、仲間が足りないという理由で<br>
+                    実現できないなんていうことはありませんか？？<br>
+                    「やりたいという強い想いを持ったアイデアがあれば、それに仲間とアイデアが集まり実現できてしまう」<br>
+                    そんな風になったら、すごく面白い社会になると思いませんか？<br>
+                    DreamMarketはそんな社会を実現するためのに作られたwebサービスです。<br>
+                    DreamMarketには、あなたのアイデアを掲載することができ、そのアイデアに仲間とアイデアを集めることができます。<br>
+
+                </div>
+                <div class="col-md-6 text-justify">
+                    「気仙沼にある仮設住宅施設をイルミネーションで飾ろう」、<br>
+                    「絵を飾れるカフェを作って若い芸術家たちにチャンスを与えよう」、<br>
+                    「日本中で子どもたちの笑顔の写真を撮って平和を世界に訴えよう」、<br>
+                    「新米パパが集まって子育てについて話し合える場を作ろう」などなど、<br>
+                    DreamMarketには本当に素敵な企画とそれを実現するための仲間がたくさん集まっています。<br>
+                    DreamMarketは、あなたのやりたいをカタチにできる一番の場所を目指します。<br>
+                    DreamMarketにあなたのアイデアを共有して、一緒に日本をワクワクさせましょう！<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix hidden-xs" style="width:100%; height:60px;"></div>
+
+    <div class="container-team">
+        <div class="container">
+            <div class="page-header" id="team">
+                <h1 class="text-center text-warning">TEAM<br/><span class="fa fa-users"></span></h1>
+                <p class="text-center">
+                    少数精鋭のメンバーで運営しています！ <br/>
+
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-warning">
+                        <div class="panel-body">
+                            <img src="{{ asset('images/suzuki_01.png') }}" class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-warning">
+                        <div class="panel-body">
+                            <img src="{{ asset('images/team2.jpg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-warning">
+                        <div class="panel-body">
+                            <img src="{{ asset('images/team3.jpg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-warning">
+                        <div class="panel-body">
+                            <img src="{{ asset('images/team4.jpg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix hidden-xs" style="width:100%; height:50px;"></div>
+    </div>
+
+    <div class="container-contacts">
+        <div class="container">
+            <div class="page-header" id="contact">
+                <h1 class="text-center text-primary">CONTACT US<br/><span class="fa fa-phone"></span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="googlemap"></div>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="email" class="form-control" id="form-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email Address</label>
+                            <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" class="form-control" id="form-subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
